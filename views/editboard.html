@@ -1,0 +1,42 @@
+<div id="editBoardPage">
+    <h1>Edit Board</h1>
+    <br>
+    <form name="editBoardForm" class="form">
+        <table>
+            <tr>
+                <td><label for='location'>Location</label></td>
+                <td colspan='3'><input id='location' ng-model='newBoard.location'></td>                
+            </tr>
+            <tr>
+                <td><label for='landmark'>Landmark</label></td>
+                <td colspan='3'><input id='landmark' ng-model='newBoard.landmark'></td>                
+            </tr>
+			<tr>
+                <td><label for='pincode'>Pin Code</label></td>
+                <td colspan='3'><input id='pincode' ng-model='newBoard.pincode'></td>                
+            </tr>
+			<tr>
+                <td><label for='city'>City</label></td>
+                <td colspan='3'><input id='city' ng-model='newBoard.city'></td>                
+            </tr>
+			<tr>
+                <td><label for='state'>State</label></td>
+                <td colspan='3'><input id='state' ng-model='newBoard.state'></td>                
+            </tr>
+			<tr>
+                <td><label for='height'>Height</label></td>
+                <td colspan='3'><input id='height' ng-model='newBoard.height'></td>                
+            </tr>
+			<tr>
+                <td><label for='width'>Width</label></td>
+                <td colspan='3'><input id='width' ng-model='newBoard.width'></td>                
+            </tr>
+			<tr>
+                <td><label for='heightfromground'>Height from Ground</label></td>
+                <td colspan='3'><input id='heightfromground' ng-model='newBoard.heightfromground'></td>                
+            </tr>
+			
+            <tr><td></td><td><a class="btn btn-default" ng-click='updateData(newBoard)'>Update Board data</a> </td></tr>
+        </table>
+    </form>
+</div>

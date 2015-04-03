@@ -1,0 +1,22 @@
+{
+  "name": "silversurfer",
+  "main": "app.js",
+  "version": "0.0.1",
+  "authors": [
+    "Prabhat Sharma <hi.prabhat@gmail.com>"
+  ],
+  "description": "client for ad server",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+    "bootstrap": "~3.3.2"
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <title>Silver Surfer</title>
+    </head>
+    <body ng-app="silversurfer" ng-init="main.active.tab = 'accounts'">
+        <h1 style="align:right">silver surfer<img src="images/silversurfer-small.jpg" height="60px"> </h1>
+
+
+        <nav id="navbar" class="tabbable">
+            <ul class="nav nav-tabs">
+                <li ng-class="{active: main.active.tab == 'boards'}">
+                    <a href="#/"  ng-click="main.active.tab = 'boards'" id="accounts">Boards</a>
+                </li>
+                <li ng-class="{active: main.active.tab == 'services'}">
+                    <a href="#/services" ng-click="main.active.tab = 'services'">Services</a>
+                </li>
+                <li ng-class="{active: main.active.tab == 'thirdparty'}">
+                    <a href="#/thirdparty" ng-click="main.active.tab = 'thirdparty'">Third Party</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section ui-view>
+                TODO. Dashboard.
+            </section>
+        </div>
+
+
+
+
+        <!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
+        <!--<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>        -->
+		<!--<script src="node_modules/angular-bootstrap/dist/ui-bootstrap-tpls.js"></script>-->
+        <!--Application scripts-->
+        <script src="bundle.js"></script>
+
+
+
+    </body>
+</html>

@@ -5,6 +5,8 @@ module.exports = function ($scope, boardService) {
 	console.log('inside boardsController');
 	$scope.boards = boardService.getBoards();
 
+    $scope.main.active.tab = 'boards';
+
 
 	$scope.deleteData = function(boardId,index){
 		console.log('inside boardsController - deleteData()');

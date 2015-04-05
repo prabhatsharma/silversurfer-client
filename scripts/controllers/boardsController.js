@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function ($scope, boardService) {
+module.exports = ['$scope', 'boardService', function ($scope, boardService) {
 
 	console.log('inside boardsController');
 	$scope.boards = boardService.getBoards();
@@ -21,4 +21,4 @@ module.exports = function ($scope, boardService) {
     $scope.updateBoard = function(board) {
       boardService.setBoard(board);   //set the data in service for sharing in editboardcontroller
     }
-};
+}];

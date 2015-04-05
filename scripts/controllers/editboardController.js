@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($scope, boardService) {
+module.exports = ['$scope', '$location', 'boardService', function($scope, $location, boardService) {
 
 	console.log('inside editboardController');
 
@@ -10,14 +10,14 @@ module.exports = function($scope, boardService) {
 
 		console.log('inside editboardController.updateData()');
 
-		boardService.updateData(existingBoard).success(function(resp){
+		boardService.updateData(existingBoard).$promise.then(function(){
 			console.log('Data updated successfully');
-			window.location = '#/'
-		}).error(function(resp){
+			$location.path('/');
+		}, function(){
 			console.log('Failed to updated data');
 		});
 
 		$scope.newBoard = {};
 		console.log('Exiting editboardController.updateData()');
     };
-};
+}];

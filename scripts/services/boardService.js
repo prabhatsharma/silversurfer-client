@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($resource, $http){
+module.exports = ['$resource', function($resource){
     var service = {};
 	var apiUrl = 'http://localhost:3000/api/boards/';
 
@@ -22,15 +22,20 @@ module.exports = function($resource, $http){
         return data.save({},board,function(res){
             return true;
         },function(error){
-            console.log(error);
+            return error;
         });
     };
 
     //PUT data for updating existing record
-	service.updateData = function(board){
-        var data = $http.put(apiUrl + board._id, board);
-        return data;
-    }
+    service.updateData = function(board){
+        var data = $resource(apiUrl + board._id, {}, 
+            {update: {method : 'PUT'}});
+        return data.update({}, board,function(res){
+            return true;
+        },function(error){
+            return error;
+        });
+    };
 
     //DELETE existing record
 	service.deleteData = function(boardid){
@@ -50,4 +55,4 @@ module.exports = function($resource, $http){
     }
 
     return service;
-};
+}];

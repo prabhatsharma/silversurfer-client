@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports=function($scope){
+module.exports=['$scope', function($scope){
 	console.log('inside services controller');
     $scope.main.active.tab = 'services';
-};
+}];

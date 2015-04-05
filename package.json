@@ -25,6 +25,7 @@
     "karma-browserify": "^4.1.2",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.7",
+    "karma-firefox-launcher": "^0.1.4",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-sinon-chai": "^0.3.0",

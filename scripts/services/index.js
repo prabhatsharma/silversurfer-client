@@ -2,4 +2,4 @@
 
 var silversurfer = angular.module('silversurfer');
 
-silversurfer.factory('boardService', require('./boardServices'));
+silversurfer.factory('boardService', require('./boardService'));

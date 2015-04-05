@@ -1,1 +1,5 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+th,td {
+    padding: 5px;
+}

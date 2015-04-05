@@ -4,11 +4,12 @@
 var angular = require('angular');
 require('angular-resource');
 require('angular-ui-router');
+require('angular-bootstrap');
 
 
 
 //Module definition
-var silversurfer = angular.module('silversurfer',['ngResource','ui.router']);
+var silversurfer = angular.module('silversurfer',['ngResource','ui.router','ui.bootstrap']);
 
 //Module dependencies
 require('./scripts/controllers');

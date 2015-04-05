@@ -6,18 +6,13 @@ module.exports = function($resource, $http){
 
     //GET all existing records from API
 	service.getBoards = function(){
-		console.log('inside getBoards service');
         var boards = $resource(apiUrl);
-		//console.log(boards);
         return boards.query();
     };
 
 	//GET a single record using id
 	service.getBoardbyId = function(id){
-		console.log('inside getBoardById service');
-        console.log('boardId is' + id);
-        var boards = $resource(apiUrl + '/' + id);
-		console.log(boards.query());
+        var boards = $resource(apiUrl + id);
         return boards.query();
     };
 
@@ -25,7 +20,6 @@ module.exports = function($resource, $http){
 	service.saveData = function(board){
         var data = $resource(apiUrl);
         return data.save({},board,function(res){
-            console.log(res);
             return true;
         },function(error){
             console.log(error);
@@ -35,14 +29,12 @@ module.exports = function($resource, $http){
     //PUT data for updating existing record
 	service.updateData = function(board){
         var data = $http.put(apiUrl + board._id, board);
-        console.log(data);
         return data;
     }
 
     //DELETE existing record
 	service.deleteData = function(boardid){
         var data = $resource(apiUrl + boardid);
-        console.log('Deleting ' + boardid);
         return data.delete();
     };
 

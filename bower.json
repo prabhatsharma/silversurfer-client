@@ -1,22 +1,24 @@
 {
-  "name": "silversurfer",
-  "main": "app.js",
-  "version": "0.0.1",
+  "name": "silversurfer-client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/prabhatsharma/silversurfer-client",
   "authors": [
     "Prabhat Sharma <hi.prabhat@gmail.com>"
   ],
-  "description": "client for ad server",
+  "description": "client for silversurfer-server",
+  "keywords": [
+    "silversurfer"
+  ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "app/bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.4"
   }
 }

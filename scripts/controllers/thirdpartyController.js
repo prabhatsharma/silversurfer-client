@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports=function($scope){
+module.exports=['$scope', function($scope){
     console.log('inside thirdpartyController');
     $scope.main.active.tab = 'thirdparty';
     
-};
+}];

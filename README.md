@@ -5,4 +5,8 @@ Its a client for silversurfer-server. The client and server together form a basi
 
 Start the server before starting client. To start client use following command.
 
-bower install && npm install && browserify app.js -o bundle.js && http-server
+$ bower install && npm install && browserify app.js -o bundle.js 
+
+To start the application
+
+$ http-server

@@ -12,7 +12,7 @@ silver-surfer server is running.
 Starting the application
 -------------------------
 
-install dependencies and create bundle
+install dependencies
 
 $ bower install & npm install
 

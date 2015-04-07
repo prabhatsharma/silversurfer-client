@@ -14,8 +14,10 @@ Starting the application
 
 install dependencies and create bundle
 
-$ bower install & npm install & browserify app.js -o dist/app.js 
+$ bower install & npm install
 
 To start the application
 
-$ http-server
+$ gulp serve
+
+It will build the application and start web server on port 8080. It will also watch for any changes to the source files.

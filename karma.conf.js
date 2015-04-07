@@ -21,9 +21,9 @@ module.exports = function(config) {
 		'node_modules/angular-resource/angular-resource.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.js',
 		
-		'app.js',
-		'scripts/**/*.js',
-		'test/unit/*.js'
+		'src/app.js',
+		'src/scripts/**/*.js',
+		'src/test/unit/*.js'
     ],
 	  
 	browserify: {
@@ -40,9 +40,9 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {	
-		'app.js' : ['browserify'],	 
-		'scripts/*/*.js' : ['browserify'],
-		'test/unit/*.js' : ['browserify']
+		'src/app.js' : ['browserify'],	 
+		'src/scripts/*/*.js' : ['browserify'],
+		'src/test/unit/*.js' : ['browserify']
     },
 
 
@@ -74,14 +74,14 @@ module.exports = function(config) {
     //browsers: ['PhantomJS'],
 	browsers: ['Chrome'],
 	  
-	   plugins : [
-		  'karma-browserify',
-		   'karma-mocha',
-		   'karma-chai',
-           'karma-sinon-chai',
-		  'karma-phantomjs-launcher',
-		   'karma-chrome-launcher',
-           'karma-firefox-launcher'
+	plugins : [
+	   'karma-browserify',
+	   'karma-mocha',
+	   'karma-chai',
+	   'karma-sinon-chai',
+	   'karma-phantomjs-launcher',
+	   'karma-chrome-launcher',
+	   'karma-firefox-launcher'
     ],
 
 

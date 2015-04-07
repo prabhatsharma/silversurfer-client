@@ -12,6 +12,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var connect = require('gulp-connect');
+var buffer = require('vinyl-buffer');
 	
 gulp.task('serve', ['watch'], function() {
 	connect.server({
@@ -34,13 +35,16 @@ gulp.task('minify-js', function () {
   // while taking care of both streaming and buffered vinyl file objects
   var browserified = transform(function(filename) {
     // filename = './app.js' in this case
-    return browserify(filename)
+    return browserify({entries: filename, debug: true})
       .bundle();
   });
 
   return gulp.src(['./src/app.js']) // you can also use glob patterns here to browserify->uglify multiple files
     .pipe(browserified)
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/'));
 });
 

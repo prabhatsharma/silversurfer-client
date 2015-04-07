@@ -5,7 +5,6 @@ var browserify = require('browserify');
 var transform = require('vinyl-transform');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
-var gutil = require('gulp-util');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -45,22 +44,26 @@ gulp.task('minify-js', function () {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/'))
+    .pipe(connect.reload());
 });
 
 gulp.task('move-index', function(){
 	return gulp.src(['./src/index.html'])
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist'))
+        .pipe(connect.reload());
 });
 
 gulp.task('move-views', function(){
 	return gulp.src(['./src/views/*.html'])
-		.pipe(gulp.dest('./dist/views'));
+		.pipe(gulp.dest('./dist/views'))
+        .pipe(connect.reload());
 });
 
 gulp.task('move-vendorcss', function() {
   return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.min.css'])
-    .pipe(gulp.dest('./dist/styles/vendor'));
+    .pipe(gulp.dest('./dist/styles/vendor'))
+    .pipe(connect.reload());
 });
 
 gulp.task('minify-mycss', function() {
@@ -69,12 +72,14 @@ gulp.task('minify-mycss', function() {
   	.pipe(concat('./tmp/style.css'))
   	.pipe(minifyCSS({keepBreaks:true}))
   	.pipe(rename('style.min.css'))
-    .pipe(gulp.dest('./dist/styles'));
+    .pipe(gulp.dest('./dist/styles'))
+    .pipe(connect.reload());
 });
 
 gulp.task('move-images', function(){
 	return gulp.src(['./src/images/*.*'])
-		.pipe(gulp.dest('./dist/images'));
+		.pipe(gulp.dest('./dist/images'))
+        .pipe(connect.reload());
 });
 
 gulp.task('move-html', ['move-index', 'move-views']);
@@ -90,4 +95,5 @@ gulp.task('watch',['build'], function(){
 	gulp.watch(htmlfiles, ['move-html']);
 	gulp.watch(cssfiles, ['minify-css']);
 	gulp.watch(jsfiles, ['minify-js']);
+    //gulp.watch(htmlfiles.concat(cssfiles).concat(jsfiles), notifyLivereload);
 });

@@ -14,7 +14,7 @@ Starting the application
 
 install dependencies and create bundle
 
-$ bower install && npm install && browserify app.js -o dist/app.js 
+$ bower install & npm install & browserify app.js -o dist/app.js 
 
 To start the application
 
